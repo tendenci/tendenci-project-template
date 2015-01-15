@@ -31,6 +31,7 @@ if DEBUG_TOOLBAR:
 # -------------------------------------- #
 TEMPLATE_DIRS += (os.path.join(PROJECT_ROOT, "themes"),)
 THEMES_DIR = os.path.join(PROJECT_ROOT, 'themes')
+ORIGINAL_THEMES_DIR = THEMES_DIR
 
 
 LOCALE_PATHS = (os.path.join(PROJECT_ROOT, 'themes'),)
