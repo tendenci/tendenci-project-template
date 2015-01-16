@@ -12,13 +12,16 @@ INSTALLED_APPS = get_setting('INSTALLED_APPS')
 TEMPLATE_CONTEXT_PROCESSORS = get_setting('TEMPLATE_CONTEXT_PROCESSORS')
 
 INSTALLED_APPS += (
-    #'legacy_t4',
-#    'bootstrap_toolkit',
-#    'pagination',
-#    'selectable',
-#    'timepiece',
     'django.contrib.gis',
+#     'committees',
+#     'case_studies',
+#     'donations',
+#     'speakers',
+#     'staff',
+#     'studygroups',
+    'videos',
     #'social_services',
+    #'legacy_t4',
 )
 
 USE_I18N = True
