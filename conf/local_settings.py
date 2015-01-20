@@ -83,15 +83,21 @@ STRIPE_PUBLISHABLE_KEY = ''
 # -------------------------------------- #
 # EMAIL
 # -------------------------------------- #
+# remove or comment out this line once you have your email backend set up.
+EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
-EMAIL_USE_TLS = False
-EMAIL_HOST = None
-EMAIL_PORT = 25
-EMAIL_HOST_USER = None
-EMAIL_HOST_PASSWORD = None
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_USE_TLS = False
+# EMAIL_HOST = None
+# EMAIL_PORT = 25
+# EMAIL_HOST_USER = None
+# EMAIL_HOST_PASSWORD = None
 
 #EMAIL_BACKEND = "django_ses.SESBackend"
-DEFAULT_FROM_EMAIL = ""
+# AWS_ACCESS_KEY_ID = ''
+# AWS_SECRET_ACCESS_KEY = ''
+
+DEFAULT_FROM_EMAIL = "no-reply@example.com"
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 # -------------------------------------- #
