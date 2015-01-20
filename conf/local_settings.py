@@ -37,11 +37,11 @@ TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': '<DB_NAME>',
         'HOST': 'localhost', 
-        'USER': None, 
-        'PASSWORD': None, 
+        'USER': '<DB_USER>', 
+        'PASSWORD': '<DB_PASS>', 
         'PORT': 5432,
         'OPTIONS': {'autocommit': True}, 
         }
