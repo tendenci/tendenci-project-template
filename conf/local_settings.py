@@ -20,6 +20,7 @@ INSTALLED_APPS += (
 #     'staff',
 #     'studygroups',
     'videos',
+    #'explorer',
     #'social_services',
     #'legacy_t4',
 )
@@ -127,3 +128,18 @@ if MEMCACHED_ENABLED:
     }
 CACHES['default']['TIMEOUT'] = 60 * 60 * 24 * 30  # 30 days
 CACHES['default']['JOHNNY_CACHE'] = True
+
+# ------------------------------------------------------------------- #
+# sql_explorer
+#
+# To enable sql_explorer:
+# 1) Uncomment SOUTH_MIGRATION_MODULES. 
+# 2) If using a different db instead of default, uncomment and specify 
+#    the EXPLORER_CONNECTION_NAME setting, and add a custom db connection
+#    in DATABASES setting.
+# 3) Uncomment explorer in the INSTALLED_APPS setting
+# 4) Uncomment explorer in url patterns in the local_urls
+# ------------------------------------------------------------------- #
+#EXPLORER_CONNECTION_NAME = 't4db'
+#SOUTH_MIGRATION_MODULES = { 'explorer': 'explorer.south_migrations', }
+
