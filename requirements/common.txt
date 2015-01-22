@@ -7,3 +7,4 @@ https://github.com/tendenci/tendenci-staff/archive/tendenci6.0.zip
 https://github.com/tendenci/tendenci-studygroups/archive/tendenci6.0.zip
 https://github.com/tendenci/tendenci-videos/archive/tendenci6.0.zip
 https://github.com/epantry/django-sql-explorer/archive/master.zip
+https://github.com/jayjay-montalbo/django-helpdesk/archive/master.zip

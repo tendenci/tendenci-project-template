@@ -23,6 +23,13 @@ INSTALLED_APPS += (
     #'explorer',
     #'social_services',
     #'legacy_t4',
+
+    # -- start of helpdesk --
+    #'bootstrap_admin',
+    #'taggit',
+    #'bootstrapform',
+    #'helpdesk',
+    # -- end of helpdesk --
 )
 
 USE_I18N = True
@@ -40,14 +47,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': '<DB_NAME>',
-        'HOST': 'localhost', 
-        'USER': '<DB_USER>', 
-        'PASSWORD': '<DB_PASS>', 
+        'HOST': 'localhost',
+        'USER': '<DB_USER>',
+        'PASSWORD': '<DB_PASS>',
         'PORT': 5432,
-        'OPTIONS': {'autocommit': True}, 
+        'OPTIONS': {'autocommit': True},
         }
 }
- 
+
 
 SSL_ENABLED = False
 CELERY_IS_ACTIVE = False
@@ -133,8 +140,8 @@ CACHES['default']['JOHNNY_CACHE'] = True
 # sql_explorer
 #
 # To enable sql_explorer:
-# 1) Uncomment SOUTH_MIGRATION_MODULES. 
-# 2) If using a different db instead of default, uncomment and specify 
+# 1) Uncomment SOUTH_MIGRATION_MODULES.
+# 2) If using a different db instead of default, uncomment and specify
 #    the EXPLORER_CONNECTION_NAME setting, and add a custom db connection
 #    in DATABASES setting.
 # 3) Uncomment explorer in the INSTALLED_APPS setting
@@ -142,4 +149,20 @@ CACHES['default']['JOHNNY_CACHE'] = True
 # ------------------------------------------------------------------- #
 #EXPLORER_CONNECTION_NAME = 't4db'
 #SOUTH_MIGRATION_MODULES = { 'explorer': 'explorer.south_migrations', }
+
+# ------------------------------------------------------------------- #
+# helpdesk
+#
+# To enable helpdesk:
+# 1) Uncomment the helpdesk block in the INSTALLED_APPS settings
+# 2) Uncomment helpdesk in url patterns in the local_urls
+# 3) Uncomment the QUEUE_* settings below, as well as HELPDESK_EMAIL_SUBJECT_TEMPLATE
+# ------------------------------------------------------------------- #
+#QUEUE_EMAIL_BOX_TYPE = 'imap'
+#QUEUE_EMAIL_BOX_SSL = True
+#QUEUE_EMAIL_BOX_HOST = 'imap.gmail.com'
+#QUEUE_EMAIL_BOX_PORT = 993
+#QUEUE_EMAIL_BOX_USER = 'sample@test.com'
+#QUEUE_EMAIL_BOX_PASSWORD = '<password>'
+#HELPDESK_EMAIL_SUBJECT_TEMPLATE = "[Tendenci] {{ ticket.ticket }} {{ ticket.title|safe }} %(subject)s"
 
