@@ -156,16 +156,12 @@ CACHES['default']['JOHNNY_CACHE'] = True
 # To enable helpdesk:
 # 1) Uncomment the helpdesk block in the INSTALLED_APPS settings
 # 2) Uncomment helpdesk in url patterns in the local_urls
-# 3) If you want users to be able to communicate with the helpdesk through emails,
-#    - Uncomment the QUEUE_* settings below, as well as HELPDESK_EMAIL_SUBJECT_TEMPLATE
+# 3) If adding helpdesk from an already existing project, please make sure to run:
+#    python manage.y create_usersettings
+# 4) If you want users to be able to communicate with the helpdesk through emails,
 #    - edit helpdesk/poll_helpdesk_email_queues.sh with the proper directory values
 #    - add "*/1 * * * * username /home/username/django/project/poll_helpdesk_email_queues.sh >> /tmp/foo.log 2>&1" to crontab
+#    - setup the individual email info per Queue object you create
 # ------------------------------------------------------------------- #
-#QUEUE_EMAIL_BOX_TYPE = 'imap'
-#QUEUE_EMAIL_BOX_SSL = True
-#QUEUE_EMAIL_BOX_HOST = 'imap.gmail.com'
-#QUEUE_EMAIL_BOX_PORT = 993
-#QUEUE_EMAIL_BOX_USER = 'sample@test.com'
-#QUEUE_EMAIL_BOX_PASSWORD = '<password>'
 #HELPDESK_EMAIL_SUBJECT_TEMPLATE = "[Tendenci] {{ ticket.ticket }} {{ ticket.title|safe }} %(subject)s"
 
