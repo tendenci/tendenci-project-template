@@ -13,12 +13,12 @@ TEMPLATE_CONTEXT_PROCESSORS = get_setting('TEMPLATE_CONTEXT_PROCESSORS')
 
 INSTALLED_APPS += (
     'django.contrib.gis',
-#     'committees',
-#     'case_studies',
-#     'donations',
-#     'speakers',
-#     'staff',
-#     'studygroups',
+    'committees',
+    'case_studies',
+    'donations',
+    'speakers',
+    'staff',
+    'studygroups',
     'videos',
     #'explorer',
     #'social_services',
