@@ -82,9 +82,6 @@ a.list-group-item.active > .badge,
   margin-left: 3px;
 }
 
-.navbar-nav {
-  margin: 7.5px -15px;
-}
 .navbar-nav > li > a {
   padding-top: 10px;
   padding-bottom: 10px;
