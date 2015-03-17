@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load base_filters %}
 {% load base_tags %}
 {% load theme_tags %}
@@ -9,7 +10,6 @@
 {% load photo_tags %}
 {% load case_study_tags %}
 {% theme_extends "base.html" %}
-{% load i18n %}
 
 
 <!-- Tendenci Specific Load Tags (Delete as Needed)
@@ -36,18 +36,13 @@
     <link rel="shortcut icon" href="{{ THEME_URL }}media/img/favicon.ico">
     <link rel="apple-touch-icon" href="{{ THEME_URL }}media/images/apple-touch-icon.png">
 
-    <!-- Bootstrap core CSS
-=========================================================== -->
-    <link href="{{ STATIC_URL }}bootstrap3/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- navigation dropdowns
 =========================================================== -->
-    <link href="{{ THEME_URL }}media/css/nav.css" rel="stylesheet">
     <link href="{{ THEME_URL }}media/css/meanmenu.css" rel="stylesheet">
 
     <!-- Custom styles for this template
 =========================================================== -->
-  <link href="{{ THEME_URL }}media/css/custom.css" rel="stylesheet">
+  <link href="{{ THEME_URL }}media/css/bootstrap-theme.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and
     media queries
@@ -64,50 +59,54 @@
 {% block body_ids %}home{% endblock body_ids %}
 {% block body_classes %}home{% endblock body_classes %}
 {% block html_body %}
-<a class="sr-only" href="#content">{% trans 'Skip to main content' %}</a>
+    <a class="sr-only" href="#content">{% trans 'Skip to main content' %}</a>
 
 
 
-      <!-- Header Starts
-=========================================================== -->
-<header>
-{% theme_include "header.html" %}<!-- Pulls in Header Include -->
-</header>
+    <!-- Header Starts
+    =========================================================== -->
+    <header>
+        {% theme_include "header.html" %}<!-- Pulls in Header Include -->
+    </header>
       <!-- Header Ends -->
 
-<div id="content" role="main">
+    <div id="content" role="main">
 
-<!-- Rotator for Jordy -->
-<div id="homepage-carousel" class="carousel slide">
-  {% list_stories as stories_list limit=6 tags="rotator" quality="90" %}
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    {% for story in stories_list %}
-    <li data-target="#homepage-carousel"
-    data-slide-to="{{ forloop.counter0 }}"
-    {% if forloop.first %}class="active"{% endif %}>
-    </li>
-    {% endfor %}
-  </ol>
-  <div class="carousel-inner">
-    {% for story in stories_list %}
-    <div class="item {% if forloop.first %}active{% endif %}">
-      {% if story.image %}
-      <img src="{% image_url story.image size=960x300 crop=true quality=90 %}" alt="{% blocktrans with t=story.title %}image for {{ t }}{% endblocktrans %}" class="image-wide"/>
-      {% endif %}
-      <div class="carousel-caption">
-        <h1>{% blocktrans with title=story.title %}{{ title }}{% endblocktrans %}</h1>
-        <p class="story">{{ story.content|striptags|truncatewords:"30"|safe }}</p>
-        <p class="no-margin"><a href="{{ story.full_story_link }}">{% trans 'LEARN MORE' %}</a></p>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-  <!-- Controls -->
-  <a class="left carousel-control" href="#homepage-carousel" data-slide="prev"><span class="icon-prev"></span></a>
-  <a class="right carousel-control" href="#homepage-carousel" data-slide="next"><span class="icon-next"></span></a>
-</div><!-- carousel items-->
-<!-- End Rotator -->
+    <!-- Rotator for Jordy -->
+    <div id="homepage-carousel" class="carousel slide">
+        {% list_stories as stories_list limit=6 tags="rotator" quality="90" %}
+
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            {% for story in stories_list %}
+                <li data-target="#homepage-carousel"
+                    data-slide-to="{{ forloop.counter0 }}"
+                    {% if forloop.first %}class="active"{% endif %}>
+                </li>
+            {% endfor %}
+        </ol>
+
+        <div class="carousel-inner">
+            {% for story in stories_list %}
+                <div class="item {% if forloop.first %}active{% endif %}">
+                    {% if story.image %}
+                        <img src="{% image_url story.image size=960x300 crop=true quality=90 %}" alt="{% blocktrans with t=story.title %}image for {{ t }}{% endblocktrans %}" class="image-wide"/>
+                    {% endif %}
+
+                    <div class="carousel-caption">
+                        <h1>{% blocktrans with title=story.title %}{{ title }}{% endblocktrans %}</h1>
+                        <p class="story">{{ story.content|striptags|truncatewords:"30"|safe }}</p>
+                        <p class="no-margin"><a href="{{ story.full_story_link }}">{% trans 'LEARN MORE' %}</a></p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#homepage-carousel" data-slide="prev"><span class="icon-prev"></span></a>
+        <a class="right carousel-control" href="#homepage-carousel" data-slide="next"><span class="icon-next"></span></a>
+    </div><!-- carousel items-->
+    <!-- End Rotator -->
 
 
 <!-- Box Examples
