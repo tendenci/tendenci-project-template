@@ -20,7 +20,7 @@ INSTALLED_APPS += (
     'staff',
     'studygroups',
     'videos',
-    #'explorer',
+    'explorer',
     #'social_services',
     #'legacy_t4',
 
@@ -148,7 +148,7 @@ CACHES['default']['JOHNNY_CACHE'] = True
 # 4) Uncomment explorer in url patterns in the local_urls
 # ------------------------------------------------------------------- #
 #EXPLORER_CONNECTION_NAME = 't4db'
-#SOUTH_MIGRATION_MODULES = { 'explorer': 'explorer.south_migrations', }
+SOUTH_MIGRATION_MODULES = { 'explorer': 'explorer.south_migrations', }
 
 # ------------------------------------------------------------------- #
 # helpdesk
@@ -164,4 +164,8 @@ CACHES['default']['JOHNNY_CACHE'] = True
 #    - setup the individual email info per Queue object you create
 # ------------------------------------------------------------------- #
 #HELPDESK_EMAIL_SUBJECT_TEMPLATE = "[Tendenci] {{ ticket.ticket }} {{ ticket.title|safe }} %(subject)s"
+
+# sql explorer only allows superuser
+EXPLORER_PERMISSION_VIEW =  lambda u: u.is_superuser
+EXPLORER_PERMISSION_CHANGE =  lambda u: u.is_superuser
 
