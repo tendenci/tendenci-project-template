@@ -9,7 +9,7 @@
 {% block title %}{{ video.title }} - {{ video.category|title }} Videos{% endblock %}
 {% block meta_description %}{{ video.category }} Videos from {{ SITE_GLOBAL_SITEDISPLAYNAME }} - {{ video.title }} - {{ video.description|striptags|truncatewords:40 }}{% endblock %}
 
-{% block body %}
+{% block content %}
 <div class="t">
 {% tags_for_object video as tags %}
 
@@ -35,4 +35,4 @@ Tags: {% for tag in tags %}
 </div>
 </div>
 <div class="clear"></div>
-{% endblock body %}
+{% endblock %}

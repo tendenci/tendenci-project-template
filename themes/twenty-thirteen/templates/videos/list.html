@@ -3,7 +3,7 @@
 
 {% block title %}{% if category %}{{category|title}} {% endif %}Videos{% endblock %}
 
-{% block body %}
+{% block content %}
 <div class="t">
 <h1>{% if category %}{{category|title}} {% endif %}Videos</h1>
 {% for video in videos %}
@@ -11,5 +11,5 @@
 {% endfor %}
 </div>
 <div class="clear"></div>
-{% endblock body %}
+{% endblock %}
 
