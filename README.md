@@ -1,6 +1,6 @@
 This is the template for tendenci 6.
 
-To start a new tendenci project with this template (replace <project_name> with your project name):
+To start a new tendenci project with this template (replace `<project_name>` with your project name):
 
     django-admin.py startproject --template=https://github.com/tendenci/tendenci-project-template/zipball/master <project_name>
 
