@@ -20,7 +20,11 @@ INSTALLED_APPS += (
     'staff',
     'studygroups',
     'videos',
+    # -- explorer block --
+    'tendenci.apps.explorer_extensions',
     'explorer',
+    # -- end of explorer block --
+
     #'social_services',
     #'legacy_t4',
 
