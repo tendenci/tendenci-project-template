@@ -12,4 +12,4 @@ https://github.com/jayjay-montalbo/django-helpdesk/archive/master.zip
 bootstrap_admin==0.3.0
 django-taggit==0.12.2
 django-debug-toolbar>=1.2.2
-
+ipython
