@@ -21,7 +21,7 @@ INSTALLED_APPS += (
     'studygroups',
     'videos',
     # -- explorer block --
-    #'tendenci.apps.explorer_extensions',
+    'tendenci.apps.explorer_extensions',
     'explorer',
     # -- end of explorer block --
 

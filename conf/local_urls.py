@@ -4,6 +4,7 @@ from django.conf.urls import include, patterns
 # here and they will be included in the main urls.py
 extrapatterns = patterns('',
      (r'^explorer/', include('explorer.urls')),
+     (r'^explorer/', include('tendenci.apps.explorer_extensions.urls')),
      #(r'^helpdesk/', include('helpdesk.urls')),
     ('^', include('committees.urls')),
     ('^', include('case_studies.urls')),
