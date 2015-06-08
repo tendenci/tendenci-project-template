@@ -13,4 +13,5 @@ extrapatterns = patterns('',
     ('^', include('staff.urls')),
     ('^', include('studygroups.urls')),
     ('^', include('videos.urls')),
+    ('^', include('testimonials.urls')),
 )

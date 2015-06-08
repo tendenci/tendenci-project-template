@@ -23,6 +23,7 @@ INSTALLED_APPS += (
     # -- explorer block --
     'tendenci.apps.explorer_extensions',
     'explorer',
+    'testimonials',
     # -- end of explorer block --
 
     #'social_services',
