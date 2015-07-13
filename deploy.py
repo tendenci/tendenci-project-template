@@ -1,6 +1,5 @@
 import subprocess
 
-subprocess.check_call(['python', 'manage.py',  'syncdb', '--noinput'])
 subprocess.check_call(['python', 'manage.py',  'migrate', '--noinput'])
 subprocess.check_call(['python', 'manage.py',  'collectstatic', '--noinput'])
 subprocess.check_call(['python', 'manage.py',  'update_settings'])
