@@ -29,7 +29,9 @@ if DEBUG_TOOLBAR:
 # -------------------------------------- #
 # THEMES
 # -------------------------------------- #
-TEMPLATE_DIRS += (os.path.join(PROJECT_ROOT, "themes"),)
+TEMPLATES[0]['DIRS'] += (os.path.join(PROJECT_ROOT, "themes"),)
+TEMPLATES[0]['OPTIONS']['debug'] = True
+
 THEMES_DIR = os.path.join(PROJECT_ROOT, 'themes')
 ORIGINAL_THEMES_DIR = THEMES_DIR
 
@@ -53,7 +55,7 @@ STATIC_URL = '/static/'
 
 STOCK_STATIC_URL = '//d15jim10qtjxjw.cloudfront.net/master-90/'
 
-TEMPLATE_CONTEXT_PROCESSORS += (
+TEMPLATES[0]['OPTIONS']['context_processors'] += (
     'django.core.context_processors.static',
     'tendenci.apps.base.context_processors.newrelic',)
 

@@ -1,16 +1,18 @@
-https://github.com/tendenci/tendenci/archive/tendenci6.zip
-https://github.com/tendenci/tendenci-donations/archive/tendenci6.0.zip
-https://github.com/tendenci/tendenci-case-studies/archive/tendenci6.0.zip
-https://github.com/tendenci/tendenci-committees/archive/tendenci6.0.zip
-https://github.com/tendenci/tendenci-speakers/archive/tendenci6.0.zip
-https://github.com/tendenci/tendenci-staff/archive/tendenci6.0.zip
-https://github.com/tendenci/tendenci-studygroups/archive/tendenci6.0.zip
-https://github.com/tendenci/tendenci-videos/archive/tendenci6.0.zip
-https://github.com/tendenci/tendenci-testimonials/archive/tendenci6.zip
-
+https://github.com/tendenci/tendenci/archive/tendenci7.zip
+https://github.com/tendenci/tendenci-donations/archive/tendenci7.zip
+https://github.com/tendenci/tendenci-case-studies/archive/tendenci7.zip
+https://github.com/tendenci/tendenci-committees/archive/tendenci7.zip
+https://github.com/tendenci/tendenci-speakers/archive/tendenci7.zip
+https://github.com/tendenci/tendenci-staff/archive/tendenci7.zip
+https://github.com/tendenci/tendenci-studygroups/archive/tendenci7.zip
+https://github.com/tendenci/tendenci-videos/archive/tendenci7.zip
+https://github.com/tendenci/tendenci-testimonials/archive/tendenci7.zip
 https://github.com/epantry/django-sql-explorer/archive/master.zip
 
-https://github.com/tendenci/django-helpdesk/archive/master.zip
+# requires django-avatar >=2.1 (the one on pypi 2.0 is not compatible)
+https://github.com/jezdez/django-avatar/archive/master.zip
+
+django-helpdesk>=0.1.16
 bootstrap_admin==0.3.0
 django-taggit==0.12.2
 django-debug-toolbar>=1.2.2

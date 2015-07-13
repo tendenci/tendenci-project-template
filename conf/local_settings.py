@@ -9,8 +9,6 @@ SITE_SETTINGS_KEY='tendenci_site_key_bdc635k2-283d-4a2c-a477-339ea866'
 
 INSTALLED_APPS = get_setting('INSTALLED_APPS')
 
-TEMPLATE_CONTEXT_PROCESSORS = get_setting('TEMPLATE_CONTEXT_PROCESSORS')
-
 INSTALLED_APPS += (
     'django.contrib.gis',
     'committees',
@@ -56,7 +54,7 @@ DATABASES = {
         'USER': '<DB_USER>',
         'PASSWORD': '<DB_PASS>',
         'PORT': 5432,
-        'OPTIONS': {'autocommit': True},
+        'autocommit': True,
         }
 }
 
@@ -120,8 +118,8 @@ SERVER_EMAIL = DEFAULT_FROM_EMAIL
 SITE_CACHE_KEY = SECRET_KEY
 
 CACHE_PRE_KEY = SITE_CACHE_KEY
-JOHNNY_MIDDLEWARE_KEY_PREFIX = SITE_CACHE_KEY
-JOHNNY_TABLE_BLACKLIST = ('base_updatetracker')
+#JOHNNY_MIDDLEWARE_KEY_PREFIX = SITE_CACHE_KEY
+#JOHNNY_TABLE_BLACKLIST = ('base_updatetracker')
 
 CACHES = {
     'default': {
@@ -139,7 +137,7 @@ if MEMCACHED_ENABLED:
         }
     }
 CACHES['default']['TIMEOUT'] = 60 * 60 * 24 * 30  # 30 days
-CACHES['default']['JOHNNY_CACHE'] = True
+#CACHES['default']['JOHNNY_CACHE'] = True
 
 # ------------------------------------------------------------------- #
 # sql_explorer
@@ -153,7 +151,7 @@ CACHES['default']['JOHNNY_CACHE'] = True
 # 4) Uncomment explorer in url patterns in the local_urls
 # ------------------------------------------------------------------- #
 #EXPLORER_CONNECTION_NAME = 't4db'
-SOUTH_MIGRATION_MODULES = { 'explorer': 'explorer.south_migrations', }
+#SOUTH_MIGRATION_MODULES = { 'explorer': 'explorer.south_migrations', }
 
 # ------------------------------------------------------------------- #
 # helpdesk

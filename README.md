@@ -1,4 +1,4 @@
-This is the template for tendenci 6.
+This is the template for tendenci 7.
 
 To start a new tendenci project with this template (replace `<project_name>` with your project name):
 
