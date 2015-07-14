@@ -25,7 +25,7 @@ ii) SECRET_KEY and SITE_SETTINGS_KEY  - each should be a random string with the 
     curl https://gist.githubusercontent.com/jennyq/45de71a93cff774c593d/raw/30ede14eb133de66cc839cc0458a1e915368534e/setup_keys.sh | bash
 
     
-###### 3) Run the deploy script to create the database tables
+###### 3) Run the deploy script to create the database tables (Sit back and relax - the django database migration might take a while.)
 
     python deploy.py
     
