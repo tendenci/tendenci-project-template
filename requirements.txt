@@ -1,1 +1,2 @@
+-r requirements/tendenci.txt
 -r requirements/prod.txt
