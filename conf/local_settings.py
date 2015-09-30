@@ -11,17 +11,18 @@ INSTALLED_APPS = get_setting('INSTALLED_APPS')
 
 INSTALLED_APPS += (
     'django.contrib.gis',
-    'committees',
-    'case_studies',
-    'donations',
-    'speakers',
-    'staff',
-    'studygroups',
-    'videos',
+    'tendenci.apps.committees',
+    'tendenci.apps.case_studies',
+    'tendenci.apps.donations',
+    'tendenci.apps.speakers',
+    'tendenci.apps.staff',
+    'tendenci.apps.studygroups',
+    'tendenci.apps.videos',
+    'tendenci.apps.testimonials',
+    'tendenci.apps.social_services',
     # -- explorer block --
     'tendenci.apps.explorer_extensions',
     'explorer',
-    'testimonials',
     # -- end of explorer block --
 
     #'social_services',

@@ -1,6 +1,5 @@
 -r common.txt
-# The following packages are needed for Heroku.
-# You may not need them locally.
+-r tendenci.txt
 
 # gevent for async workers
 gevent==0.13.8
