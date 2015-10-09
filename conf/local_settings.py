@@ -34,9 +34,6 @@ SITE_MODE = 'prod'
 ADMINS = ()
 MANAGERS = ADMINS
 
-DEBUG = False
-TEMPLATE_DEBUG = DEBUG
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
@@ -131,4 +128,18 @@ CACHES['default']['TIMEOUT'] = 60 * 60 * 24 * 30  # 30 days
 # sql explorer only allows superuser
 EXPLORER_PERMISSION_VIEW =  lambda u: u.is_superuser
 EXPLORER_PERMISSION_CHANGE =  lambda u: u.is_superuser
+
+# debug mode
+DEBUG = False
+
+TEMPLATES = get_setting('TEMPLATES')
+TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
+# Turn off the template caching
+# TEMPLATES[0]['OPTIONS']['loaders'] = [
+#                 'app_namespace.Loader',
+#                 'tendenci.apps.theme.template_loaders.Loader',
+#                 'django.template.loaders.filesystem.Loader',
+#                 'django.template.loaders.app_directories.Loader',
+#             ]
+
 
