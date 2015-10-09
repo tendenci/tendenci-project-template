@@ -24,16 +24,6 @@ INSTALLED_APPS += (
     'tendenci.apps.explorer_extensions',
     'explorer',
     # -- end of explorer block --
-
-    #'social_services',
-    #'legacy_t4',
-
-    # -- start of helpdesk --
-    #'bootstrap_admin',
-    #'taggit',
-    #'bootstrapform',
-    #'helpdesk',
-    # -- end of helpdesk --
 )
 
 USE_I18N = True
@@ -117,10 +107,8 @@ SERVER_EMAIL = DEFAULT_FROM_EMAIL
 # -------------------------------------- #
 
 SITE_CACHE_KEY = SECRET_KEY
-
 CACHE_PRE_KEY = SITE_CACHE_KEY
-#JOHNNY_MIDDLEWARE_KEY_PREFIX = SITE_CACHE_KEY
-#JOHNNY_TABLE_BLACKLIST = ('base_updatetracker')
+
 
 CACHES = {
     'default': {
@@ -138,36 +126,7 @@ if MEMCACHED_ENABLED:
         }
     }
 CACHES['default']['TIMEOUT'] = 60 * 60 * 24 * 30  # 30 days
-#CACHES['default']['JOHNNY_CACHE'] = True
 
-# ------------------------------------------------------------------- #
-# sql_explorer
-#
-# To enable sql_explorer:
-# 1) Uncomment SOUTH_MIGRATION_MODULES.
-# 2) If using a different db instead of default, uncomment and specify
-#    the EXPLORER_CONNECTION_NAME setting, and add a custom db connection
-#    in DATABASES setting.
-# 3) Uncomment explorer in the INSTALLED_APPS setting
-# 4) Uncomment explorer in url patterns in the local_urls
-# ------------------------------------------------------------------- #
-#EXPLORER_CONNECTION_NAME = 't4db'
-#SOUTH_MIGRATION_MODULES = { 'explorer': 'explorer.south_migrations', }
-
-# ------------------------------------------------------------------- #
-# helpdesk
-#
-# To enable helpdesk:
-# 1) Uncomment the helpdesk block in the INSTALLED_APPS settings
-# 2) Uncomment helpdesk in url patterns in the local_urls
-# 3) If adding helpdesk from an already existing project, please make sure to run:
-#    python manage.y create_usersettings
-# 4) If you want users to be able to communicate with the helpdesk through emails,
-#    - edit helpdesk/poll_helpdesk_email_queues.sh with the proper directory values
-#    - add "*/1 * * * * username /home/username/django/project/poll_helpdesk_email_queues.sh >> /tmp/foo.log 2>&1" to crontab
-#    - setup the individual email info per Queue object you create
-# ------------------------------------------------------------------- #
-#HELPDESK_EMAIL_SUBJECT_TEMPLATE = "[Tendenci] {{ ticket.ticket }} {{ ticket.title|safe }} %(subject)s"
 
 # sql explorer only allows superuser
 EXPLORER_PERMISSION_VIEW =  lambda u: u.is_superuser
