@@ -131,6 +131,7 @@ EXPLORER_PERMISSION_CHANGE =  lambda u: u.is_superuser
 
 # debug mode
 DEBUG = False
+DEBUG_TOOLBAR = False
 
 TEMPLATES = get_setting('TEMPLATES')
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG

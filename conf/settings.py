@@ -19,14 +19,6 @@ LANGUAGE_CODE = 'en-us'
 SITE_ID = 1
 
 # -------------------------------------- #
-# DEBUG OPTIONS
-# -------------------------------------- #
-DEBUG_TOOLBAR = False
-if DEBUG_TOOLBAR:
-    INSTALLED_APPS += ('debug_toolbar',)
-    MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
-
-# -------------------------------------- #
 # THEMES
 # -------------------------------------- #
 TEMPLATES[0]['DIRS'] += (os.path.join(PROJECT_ROOT, "themes"),)
@@ -114,6 +106,20 @@ try:
     from local_settings import *
 except ImportError:
     pass
+
+
+# -------------------------------------- #
+# DEBUG OPTIONS
+# -------------------------------------- #
+if DEBUG_TOOLBAR:
+    INSTALLED_APPS += ('debug_toolbar',)
+    MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+    
+    def show_toolbar():
+        return True
+
+    # You can specify INTERNAL_IPS, then remove this setting
+    SHOW_TOOLBAR_CALLBACK = show_toolbar()
 
 
 # THIS MUST BE AT THE END!
