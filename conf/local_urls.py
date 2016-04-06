@@ -5,7 +5,7 @@ from django.conf.urls import include, patterns
 extrapatterns = patterns('',
      (r'^explorer/', include('explorer.urls')),
      (r'^explorer/', include('tendenci.apps.explorer_extensions.urls')),
-     #(r'^helpdesk/', include('helpdesk.urls')),
+     # (r'^tickets/', include('tendenci.apps.helpdesk.urls')),
      ('^', include('tendenci.apps.committees.urls')),
      ('^', include('tendenci.apps.case_studies.urls')),
      ('^', include('tendenci.apps.donations.urls')),

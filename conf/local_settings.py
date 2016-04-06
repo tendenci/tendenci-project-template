@@ -24,6 +24,12 @@ INSTALLED_APPS += (
     'tendenci.apps.explorer_extensions',
     'explorer',
     # -- end of explorer block --
+    
+    # --helpdesk --
+    #'markdown_deux',
+    #'bootstrapform',
+    #'tendenci.apps.helpdesk',
+    # -- end of helpdesk
 )
 
 USE_I18N = True
@@ -128,6 +134,9 @@ CACHES['default']['TIMEOUT'] = 60 * 60 * 24 * 30  # 30 days
 # sql explorer only allows superuser
 EXPLORER_PERMISSION_VIEW =  lambda u: u.is_superuser
 EXPLORER_PERMISSION_CHANGE =  lambda u: u.is_superuser
+
+# helpdesk
+#HELPDESK_REDIRECT_TO_LOGIN_BY_DEFAULT = True
 
 # debug mode
 DEBUG = False
