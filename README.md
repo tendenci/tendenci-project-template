@@ -29,15 +29,23 @@ ii) SECRET_KEY and SITE_SETTINGS_KEY  - each should be a random string with the 
 
     python deploy.py
     
-###### 4) Populate some default data (recommended)
+###### 4) Populate some default data
+
+    python manage.py load_base_defaults
+    
+Optionally, you can load more date with the command
 
     python manage.py load_npo_defaults
     
-###### 5) To create a superuser login, run this command and follow with the prompt
+###### 5) Make sure the execute permission is removed from the media/ directory
+
+	chmod -R -x+X media
+    
+###### 6) To create a superuser login, run this command and follow with the prompt
 
     python manage.py createsuperuser
    
-###### 6) Run it!
+###### 7) Run it!
 
     python manage.py runserver
     
