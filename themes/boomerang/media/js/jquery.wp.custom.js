@@ -34,10 +34,12 @@ $(document).ready(function() {
 		'scrolling'   		: 'no'
 	});
 	// Masonry
-	var container = document.querySelector('#masonryWr');
-	var msnry = new Masonry( container, {
-	  itemSelector: '.item'
-	});
+	// Commenting out to prevent the error "Bad masonry element: null"
+	// because there is no element with 'masonryWr'id attr in the theme
+	//var container = document.querySelector('#masonryWr');
+	//var msnry = new Masonry( container, {
+	//  itemSelector: '.item'
+	//});
 	// Scroll to top
 	$().UItoTop({ easingType: 'easeOutQuart' });
 	// Inview animations
