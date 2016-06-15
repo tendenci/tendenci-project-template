@@ -67,7 +67,10 @@ TIME_ZONE = 'US/Central'
 # -------------------------------------- #
 SENTRY_DSN = ""
 if SENTRY_DSN:
-    INSTALLED_APPS += ('raven.contrib.django',)
+    INSTALLED_APPS += ('raven.contrib.django.raven_compat',)
+    RAVEN_CONFIG = {
+        'dsn': SENTRY_DSN,
+}
 
 # ---------------------------------------#
 # PAYMENT GATEWAY
