@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Run this script for the initial migration will use less RAM than running "python manage.py migrate",
+# Running this script for the initial migration will use less RAM than running "python manage.py migrate",
 # because the latter needs to figure out the order of all the dependencies which takes lots of memory.
 
 # Note that: the initial 4 migrations will throw errors that can be safely ignored.
@@ -16,7 +16,6 @@ apps=("contenttypes 0002" \
  "user_groups 0001" \
  "meta 0001" \
  "articles 0002" \
- "avatar 0001" \
  "base 0002" \
  "boxes 0001" \
  "invoices 0001" \
