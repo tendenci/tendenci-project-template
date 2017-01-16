@@ -31,11 +31,8 @@ ii) SECRET_KEY and SITE_SETTINGS_KEY  - each should be a random string with the 
     
 ###### 4) Populate some default data
 
-    python manage.py load_base_defaults
+    python manage.py load_creative_defaults
     
-Optionally, you can load more date with the command
-
-    python manage.py load_npo_defaults
     
 ###### 5) Make sure the execute permission is removed from the media/ directory
 
