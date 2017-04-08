@@ -3,6 +3,3 @@
 
 # gevent for async workers
 gevent==0.13.8
-
-# For Sentry
-raven==5.17.0
