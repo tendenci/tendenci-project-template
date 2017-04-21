@@ -56,6 +56,15 @@ DATABASES = {
 SSL_ENABLED = False
 CELERY_IS_ACTIVE = False
 
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+#SESSION_COOKIE_SECURE = True  # Send Session Cookie over HTTPS only
+#CSRF_COOKIE_SECURE = True  # Send CSRF Cookie over HTTPS only
+
+# Uncomment to properly detect HTTP vs HTTPS when running behind nginx.
+# DO NOT uncomment if not running behind nginx, as that will open a security
+# hole.
+#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -83,6 +92,8 @@ AUTHNET_MD5_HASH_VALUE = False
 # paypalpayflowlink (currently US only unfortunately per PayPal)
 PAYPAL_MERCHANT_LOGIN = ''
 PAYFLOWLINK_PARTNER = 'PayPal'
+# Uncomment when using the PayPal Sandbox
+#PAYPAL_POST_URL = 'https://www.sandbox.paypal.com/cgi-bin/webscr'
 
 # stripe
 STRIPE_SECRET_KEY = ''
@@ -155,4 +166,118 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 #                 'django.template.loaders.app_directories.Loader',
 #             ]
 
-
+# -------------------------------------- #
+# LOGGING
+# -------------------------------------- #
+ENABLE_LOGGING = False
+if ENABLE_LOGGING:
+  LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'root': {
+        # Set the default logger level to DEBUG so that all messages are passed
+        # to the handlers and the handlers can decide which messages to actually
+        # log.
+        'level': 'DEBUG',
+        'handlers': ['file', 'debug_file', 'mail_admins'],
+    },
+    'loggers': {
+        # The 'django' logger must be defined to override the defaults
+        # configured by Django:
+        # https://github.com/django/django/blob/master/django/utils/log.py
+        'django': {
+            'level': 'DEBUG',
+            # Disable the default handlers
+            'handlers': [],
+            # And use the 'root' handlers above instead
+            'propagate': True,
+        },
+        # In Django <=1.10, 'django.request', 'django.security', and
+        # 'py.warnings' must also be defined to override the defaults configured
+        # by Django.
+        'django.request': {
+            'level': 'DEBUG',
+            'handlers': [],
+            'propagate': True,
+        },
+        'django.security': {
+            'level': 'DEBUG',
+            'handlers': [],
+            'propagate': True,
+        },
+        'py.warnings': {
+            'level': 'DEBUG',
+            'handlers': [],
+            'propagate': True,
+        },
+        # django.db.backends logs all SQL statements at DEBUG level when
+        # settings.DEBUG is True.  That produces lots of log messages, so set
+        # the level at INFO to filter them.
+        'django.db.backends': {
+            'level': 'INFO',
+        },
+        # The Daphne web server logs connection details at DEBUG level.  That
+        # produces lots of log messages, so set the level at INFO to filter
+        # them when running under Daphne.
+        # In addition, Daphne logs ERRORs when workers are stopped/started.  It
+        # is probably unnecessary to send emails for those, so disable the
+        # mail_admins handler for Daphne logs.
+        'daphne': {
+            'level': 'INFO',
+            'handlers': ['file', 'debug_file'],
+            'propagate': False,
+        },
+    },
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+    },
+    'formatters': {
+        'info': {
+            'format': 'TIME="%(asctime)s" LEVEL=%(levelname)s PID=%(process)d LOGGER="%(name)s" MSG="%(message)s"'
+        },
+        'debug': {
+            'format': 'TIME="%(asctime)s" LEVEL=%(levelname)s PID=%(process)d LOGGER="%(name)s" FILE="%(pathname)s" LINE=%(lineno)s FUNC="%(funcName)s" MSG="%(message)s"'
+        },
+    },
+    'handlers': {
+        # FileHandler is thread safe but not multi-process safe, so log output could be interleaved
+        # if multiple worker processes generate a log message at the same time.  Since Django and
+        # Tendenci logging is minimal and mostly non-critical, this is not likely to be much of a
+        # problem in most cases.  However, if you need multi-process safe logging, use SysLogHandler
+        # or SocketHandler with a log server such as https://pypi.python.org/pypi/multilog .
+        #
+        # DO NOT use RotatingFileHandler or TimedRotatingFileHandler here, as their rotation
+        # behavior is not multi-process safe and will cause data to be lost from rotated log files.
+        # When using those Handlers, each process will redundantly rotate the files and will
+        # overwrite any files previously rotated by another process.  If you need logs to be
+        # automatically rotated, either use logrotate (and restart Tendenci after rotation), or use
+        # SocketHandler with a log server such as multilog which can then safely use
+        # RotatingFileHandler or TimedRotatingFileHandler.
+        'file': {
+            'level': 'INFO',
+            'formatter': 'info',
+            'class': 'logging.FileHandler',
+            'filename': '/var/log/tendenci/app.log',
+        },
+        'debug_file': {
+            'filters': ['require_debug_true'],
+            'level': 'DEBUG',
+            'formatter': 'debug',
+            'class': 'logging.FileHandler',
+            'filename': '/var/log/tendenci/debug.log',
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'tendenci.apps.base.log.CustomAdminEmailHandler',
+        },
+        'discard': {
+            'level': 'CRITICAL',
+            'class': 'logging.NullHandler',
+        },
+    },
+  }
