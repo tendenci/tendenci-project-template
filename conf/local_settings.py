@@ -143,7 +143,19 @@ EXPLORER_PERMISSION_CHANGE =  lambda u: u.is_superuser
 
 # debug mode
 DEBUG = False
-DEBUG_TOOLBAR = False
+
+# Django Debug Toolbar for profiling (measuring CPU/SQL/cache/etc timing)
+# Set DEBUG_TOOLBAR_INSTALLED to deploy the relevant static files (when
+# `python manage.py deploy` is run) and add the necessary middleware.
+# Set DEBUG_TOOLBAR_ENABLED to actually enable profiling and the toolbar.
+# DEBUG_TOOLBAR_INSTALLED should not impact performance, but
+# DEBUG_TOOLBAR_ENABLED will slow down Django.
+DEBUG_TOOLBAR_INSTALLED = True
+DEBUG_TOOLBAR_ENABLED = False
+DEBUG_TOOLBAR_CONFIG = {
+    'SHOW_TOOLBAR_CALLBACK': lambda req: DEBUG_TOOLBAR_ENABLED,
+    'SHOW_COLLAPSED': False,
+}
 
 TEMPLATES = get_setting('TEMPLATES')
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG

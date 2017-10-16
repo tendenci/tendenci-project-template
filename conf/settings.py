@@ -111,15 +111,9 @@ except ImportError:
 # -------------------------------------- #
 # DEBUG OPTIONS
 # -------------------------------------- #
-if DEBUG_TOOLBAR:
+if DEBUG_TOOLBAR_INSTALLED:
     INSTALLED_APPS += ('debug_toolbar',)
     MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
-    
-    def show_toolbar():
-        return True
-
-    # You can specify INTERNAL_IPS, then remove this setting
-    SHOW_TOOLBAR_CALLBACK = show_toolbar()
 
 
 # THIS MUST BE AT THE END!
