@@ -56,7 +56,22 @@ DATABASES = {
 SSL_ENABLED = False
 CELERY_IS_ACTIVE = False
 
+# Logged in users may either be logged out when the user closes their
+# browser, or may remain logged in after the user closes and reopens
+# their browser.
+# For logins through /admin/login/, SESSION_EXPIRE_AT_BROWSER_CLOSE
+# controls this behavior.
+# For logins through /accounts/login/, the "Hide Remember Me" and
+# "Remember Me Checked" settings in the "Users" app in Tendenci control
+# this behavior, overriding SESSION_EXPIRE_AT_BROWSER_CLOSE.
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+# Independently of that behavior, users will also be logged out by both
+# the server and their browser if they do not visit the site for more
+# than SESSION_COOKIE_AGE seconds.  However, each page load will reset
+# this counter, allowing the user to remain logged in indefinitely as
+# long as they continue to visit the site regularly.
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 7 * 2  # 2 weeks
+
 #SESSION_COOKIE_SECURE = True  # Send Session Cookie over HTTPS only
 #CSRF_COOKIE_SECURE = True  # Send CSRF Cookie over HTTPS only
 
