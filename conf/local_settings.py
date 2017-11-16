@@ -24,7 +24,7 @@ INSTALLED_APPS += (
     'tendenci.apps.explorer_extensions',
     'explorer',
     # -- end of explorer block --
-    
+
     # --helpdesk --
     #'markdown_deux',
     #'bootstrapform',
@@ -198,6 +198,15 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 # -------------------------------------- #
 ENABLE_LOGGING = False
 if ENABLE_LOGGING:
+  if DEBUG:
+    import sys
+    if not sys.warnoptions:
+      # Log Python Warnings to the py.warnings logger instead of the console
+      import logging
+      logging.captureWarnings(True)
+      # Enable ImportWarning and DeprecationWarning messages
+      import warnings
+      warnings.simplefilter("default")
   LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
