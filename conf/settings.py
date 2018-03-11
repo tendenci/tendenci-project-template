@@ -48,7 +48,7 @@ STATIC_URL = '/static/'
 STOCK_STATIC_URL = '//d15jim10qtjxjw.cloudfront.net/master-90/'
 
 TEMPLATES[0]['OPTIONS']['context_processors'] += (
-    'django.core.context_processors.static',
+    'django.template.context_processors.static',
     'tendenci.apps.base.context_processors.newrelic',)
 
 # ----------------------------------------- #
