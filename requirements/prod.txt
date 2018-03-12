@@ -2,4 +2,4 @@
 -r tendenci.txt
 
 # gevent for async workers
-gevent==0.13.8
+gevent==1.3a2
