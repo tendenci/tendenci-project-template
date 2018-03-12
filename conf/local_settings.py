@@ -1,7 +1,10 @@
 # Method that pulls settings from the standard settings.py
 # file so that you can append or override items.
 def get_setting(setting):
-    import settings
+    try:
+        from . import settings  # Python 3
+    except ImportError:
+        import settings  # Python 2
     return getattr(settings, setting)
 
 SECRET_KEY='your_unique_secret_key_Qoh222VG9pq8P9hOapH'
