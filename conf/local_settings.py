@@ -15,7 +15,7 @@ SITE_SETTINGS_KEY='tendenci_site_key_bdc635k2-283d-4a2c-a477-339ea866'
 
 INSTALLED_APPS = get_setting('INSTALLED_APPS')
 
-INSTALLED_APPS += (
+INSTALLED_APPS += [
     'django.contrib.gis',
     'tendenci.apps.committees',
     'tendenci.apps.case_studies',
@@ -36,7 +36,7 @@ INSTALLED_APPS += (
     #'bootstrapform',
     #'tendenci.apps.helpdesk',
     # -- end of helpdesk
-)
+]
 
 USE_I18N = True
 
