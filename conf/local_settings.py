@@ -7,6 +7,9 @@ def get_setting(setting):
         import settings  # Python 2
     return getattr(settings, setting)
 
+# debug mode
+DEBUG = False
+
 SECRET_KEY='your_unique_secret_key_Qoh222VG9pq8P9hOapH'
 SITE_SETTINGS_KEY='tendenci_site_key_bdc635k2-283d-4a2c-a477-339ea866'
 
@@ -36,7 +39,14 @@ INSTALLED_APPS += (
 )
 
 USE_I18N = True
-ALLOWED_HOSTS = ["*"]
+
+# To prevent HTTP Host header attacks, this must be set to a list of
+# fully qualified domain names which are valid for this server.  All
+# sub-domains can be matched by prefixing the domain with a period, for
+# example '.example.com'.
+ALLOWED_HOSTS = ['example.com', 'www.example.com']
+if DEBUG:
+    ALLOWED_HOSTS += ['localhost', '127.0.0.1', '[::1]']
 
 SITE_MODE = 'prod'
 
@@ -169,9 +179,6 @@ EXPLORER_PERMISSION_CHANGE =  lambda u: u.is_superuser
 
 # helpdesk
 #HELPDESK_REDIRECT_TO_LOGIN_BY_DEFAULT = True
-
-# debug mode
-DEBUG = False
 
 # Django Debug Toolbar for profiling (measuring CPU/SQL/cache/etc timing)
 # Set DEBUG_TOOLBAR_INSTALLED to deploy the relevant static files (when
