@@ -97,7 +97,7 @@ CAMPAIGNMONITOR_API_CLIENT_ID = ''
 # ------------------------------------ #
 
 if os.path.exists(os.path.join(PROJECT_ROOT, 'addons/impersonation/')):
-    MIDDLEWARE_CLASSES += (
+    MIDDLEWARE += (
         'addons.impersonation.middleware.ImpersonationMiddleware',
     )
 
@@ -113,7 +113,7 @@ except ImportError:
 # -------------------------------------- #
 if DEBUG_TOOLBAR_INSTALLED:
     INSTALLED_APPS += ('debug_toolbar',)
-    MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+    MIDDLEWARE += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
 
 
 # THIS MUST BE AT THE END!
