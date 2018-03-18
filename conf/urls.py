@@ -22,10 +22,7 @@ if not settings.USE_S3_STORAGE:
     ]
 
 # Local url patterns for development
-try:
-    from .local_urls import extrapatterns
-    urlpatterns += extrapatterns
-except ImportError:
-    pass
+from .local_urls import extrapatterns
+urlpatterns += extrapatterns
 
 urlpatterns += tendenci_urls

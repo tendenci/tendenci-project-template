@@ -103,10 +103,7 @@ if os.path.exists(os.path.join(PROJECT_ROOT, 'addons/impersonation/')):
     ]
 
 # local settings for development
-try:
-    from .local_settings import *
-except ImportError:
-    pass
+from .local_settings import *
 
 
 # -------------------------------------- #
