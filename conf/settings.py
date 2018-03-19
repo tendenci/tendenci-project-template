@@ -6,9 +6,9 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
 ROOT_URLCONF = 'conf.urls'
 
-INSTALLED_APPS += (
+INSTALLED_APPS += [
     'gunicorn',
-)
+]
 
 SITE_ADDONS_PATH = os.path.join(PROJECT_ROOT, 'addons')
 
@@ -21,7 +21,7 @@ SITE_ID = 1
 # -------------------------------------- #
 # THEMES
 # -------------------------------------- #
-TEMPLATES[0]['DIRS'] += (os.path.join(PROJECT_ROOT, "themes"),)
+TEMPLATES[0]['DIRS'] += [os.path.join(PROJECT_ROOT, "themes"),]
 TEMPLATES[0]['OPTIONS']['debug'] = True
 
 THEMES_DIR = os.path.join(PROJECT_ROOT, 'themes')
@@ -47,9 +47,10 @@ STATIC_URL = '/static/'
 
 STOCK_STATIC_URL = '//d15jim10qtjxjw.cloudfront.net/master-90/'
 
-TEMPLATES[0]['OPTIONS']['context_processors'] += (
+TEMPLATES[0]['OPTIONS']['context_processors'] += [
     'django.template.context_processors.static',
-    'tendenci.apps.base.context_processors.newrelic',)
+    'tendenci.apps.base.context_processors.newrelic',
+]
 
 # ----------------------------------------- #
 # s3 storeage example
@@ -97,9 +98,9 @@ CAMPAIGNMONITOR_API_CLIENT_ID = ''
 # ------------------------------------ #
 
 if os.path.exists(os.path.join(PROJECT_ROOT, 'addons/impersonation/')):
-    MIDDLEWARE_CLASSES += (
+    MIDDLEWARE += [
         'addons.impersonation.middleware.ImpersonationMiddleware',
-    )
+    ]
 
 # local settings for development
 try:
@@ -112,8 +113,8 @@ except ImportError:
 # DEBUG OPTIONS
 # -------------------------------------- #
 if DEBUG_TOOLBAR_INSTALLED:
-    INSTALLED_APPS += ('debug_toolbar',)
-    MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+    INSTALLED_APPS += ['debug_toolbar',]
+    MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware',]
 
 
 # THIS MUST BE AT THE END!
