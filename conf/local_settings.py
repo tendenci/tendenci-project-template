@@ -51,7 +51,7 @@ DATABASES = {
         'USER': '<DB_USER>',
         'PASSWORD': '<DB_PASS>',
         'PORT': 5432,
-        'autocommit': True,
+        'AUTOCOMMIT': True,
         }
 }
 
