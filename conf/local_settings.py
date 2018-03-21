@@ -50,7 +50,7 @@ if DEBUG:
 
 SITE_MODE = 'prod'
 
-ADMINS = ()
+ADMINS = []
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -206,7 +206,7 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 # -------------------------------------- #
 # LOGGING
 # -------------------------------------- #
-ENABLE_LOGGING = False
+ENABLE_LOGGING = True
 if ENABLE_LOGGING:
   if DEBUG:
     import sys
