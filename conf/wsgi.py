@@ -17,6 +17,9 @@ import os
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "conf.settings")
 
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+os.environ.setdefault('TENDENCI_PROJECT_ROOT', PROJECT_ROOT)
+
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION
 # setting points here.

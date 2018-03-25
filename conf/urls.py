@@ -1,28 +1,23 @@
-from django.conf.urls import url
-from django.conf import settings
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.views import static
-from tendenci.urls import urlpatterns as tendenci_urls
+#
+# This file is ignored unless "ROOT_URLCONF = 'conf.urls'" is configured in
+# settings.py
+#
 
-handler500 = 'tendenci.apps.base.views.custom_error'
+from tendenci.urls import handler500  # noqa: F401
+from tendenci.urls import pre_urlpatterns, post_urlpatterns
+from django.conf.urls import url, include  # noqa: F401
 
-urlpatterns = staticfiles_urlpatterns()
 
-if not settings.USE_S3_STORAGE:
-    urlpatterns += [
-        url(r'^media/(?P<path>.*)$', static.serve, {
-            'document_root': settings.MEDIA_ROOT,
-        }),
-        url(r'^static/(?P<path>.*)$', static.serve, {
-            'document_root': settings.STATIC_ROOT,
-        }),
-        url(r'^themes/(?P<path>.*)$', static.serve, {
-            'document_root': settings.THEMES_DIR,
-        }),
-    ]
+urlpatterns = pre_urlpatterns + [
+    #url(r'^', include('example_app.urls')),
+    #url(r'^tickets/', include('tendenci.apps.helpdesk.urls')),
+] + post_urlpatterns
 
-# Local url patterns for development
-from .local_urls import extrapatterns
-urlpatterns += extrapatterns
 
-urlpatterns += tendenci_urls
+# To remove a URL pattern from the default configuration:
+#from tendenci.urls import remove_url_for_include  # noqa: E402
+#remove_url_for_include(urlpatterns, 'some_app.urls')
+# Or:
+#remove_includes = ['app1.urls', 'app2.urls']
+#for include in remove_includes:
+#    remove_url_for_include(urlpatterns, include)
