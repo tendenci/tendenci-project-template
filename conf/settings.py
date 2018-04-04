@@ -38,11 +38,14 @@ if DEBUG:
 # Required Settings
 # ---------------------------------------------------------------------------- #
 
-# These must be set to two different random 50-character strings that are unique
-# to this site.  Django will refuse to start if these are not configured.
+# These must be set to two different random strings, at least 50 characters in
+# length, that are unique to this site.  Django will refuse to start if these
+# are not configured.
 # The security of the site relies on these being appropriately random, so use a
 # good random number generator.  Good random strings are conveniently available
-# at https://www.grc.com/passwords.htm
+# at https://www.grc.com/passwords.htm (Use the
+# "63 random alpha-numeric characters" string, and refresh the page to get an
+# additional string.)
 SECRET_KEY = ''
 SITE_SETTINGS_KEY = ''
 
@@ -185,7 +188,7 @@ TIME_ZONE = 'US/Central'
 
 # PayPal
 #PAYPAL_POST_URL = 'https://www.paypal.com/cgi-bin/webscr'
-#PAYPAL_POST_URL = 'https://www.sandbox.paypal.com/cgi-bin/webscr'
+#PAYPAL_POST_URL = PAYPAL_SANDBOX_POST_URL
 
 # Stripe
 #STRIPE_SECRET_KEY = ''
