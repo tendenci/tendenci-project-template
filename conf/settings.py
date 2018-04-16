@@ -199,8 +199,9 @@ TIME_ZONE = 'US/Central'
 # Cache Settings
 # ---------------------------------------------------------------------------- #
 
-# By default, Tendenci will attempt to connect to memcached on localhost.  If
-# memcached is not installed then caching will be disabled.
+# If pylibmc is installed then Tendenci will attempt to connect to memcached on
+# localhost.  If pylibmc and/or memcached is not installed then caching will be
+# disabled.
 
 # If multiple Tendenci sites share the same memcached, uncomment and configure
 # the following settings with a value that is unique to this site.  This is used
@@ -214,10 +215,6 @@ TIME_ZONE = 'US/Central'
 # To change the cache timeout:
 # (Default is 30 days)
 #CACHES['default']['TIMEOUT'] = 60*60*24*30
-
-# To disable caching entirely and prevent Tendenci from attempting to use
-# memcached:
-#CACHES = {'default': {'BACKEND': 'django.core.cache.backends.dummy.DummyCache'}}
 
 
 # ---------------------------------------------------------------------------- #

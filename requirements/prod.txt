@@ -1,5 +1,7 @@
 -r common.txt
 -r tendenci.txt
 
+pylibmc==1.5.2
+
 # gevent for async workers
 gevent==1.3a2
