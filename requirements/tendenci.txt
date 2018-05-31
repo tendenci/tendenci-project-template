@@ -1,1 +1,1 @@
-tendenci>=8,<9
+tendenci>=11,<12
