@@ -1,1 +1,3 @@
-tendenci>=11,<12
+# pull from tendenci11 branch for now for testing during development
+https://github.com/tendenci/tendenci/archive/tendenci11.zip
+# tendenci>=11,<12
