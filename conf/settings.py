@@ -256,7 +256,7 @@ TIME_ZONE = 'US/Central'
 #    INSTALLED_APPS.remove(app)
 
 # To enable custom URL patterns to be configured in urls.py:
-#ROOT_URLCONF = 'conf.urls'
+ROOT_URLCONF = 'conf.urls'
 
 # To enable the Tendenci helpdesk app, uncomment this setting, uncomment
 # ROOT_URLCONF above, and uncomment the helpdesk urlpattern in urls.py
@@ -268,23 +268,23 @@ TIME_ZONE = 'US/Central'
 # ---------------------------------------------------------------------------- #
 
 # By default, Tendenci logs all INFO and greater log messages to
-# /var/log/tendenci/app.log
+# /var/log/mysite/app.log
 #
 # When DEBUG is True, Tendenci logs DEBUG and greater log messages to
-# /var/log/tendenci/debug.log (in addition to logging INFO and greater log
-# messages to /var/log/tendenci/app.log)
+# /var/log/mysite/debug.log (in addition to logging INFO and greater log
+# messages to /var/log/mysite/app.log)
 
 # To change the log file names:
-#set_app_log_filename('/var/log/tendenci/app.log')
-#set_debug_log_filename('/var/log/tendenci/debug.log')
+#set_app_log_filename('/var/log/mysite/app.log')
+#set_debug_log_filename('/var/log/mysite/debug.log')
 
 # To change the log level for the app.log file:
 # (Valid levels are: 'DEBUG' 'INFO' 'WARNING' 'ERROR' 'CRITICAL')
 #set_app_log_level('INFO')
 
 # To disable logging:
-#disable_app_log()
-#disable_debug_log()
+disable_app_log()
+disable_debug_log()
 
 # To disable debug.log and write DEBUG messages to app.log when DEBUG is True:
 #disable_debug_log()
