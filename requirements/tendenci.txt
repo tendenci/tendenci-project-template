@@ -1,3 +1,2 @@
-# pull from tendenci11 branch for now for testing during development
-https://github.com/tendenci/tendenci/archive/master.zip
-# tendenci>=11,<12
+# https://github.com/tendenci/tendenci/archive/master.zip
+tendenci>=11,<12
