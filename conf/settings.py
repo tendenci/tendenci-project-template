@@ -292,7 +292,7 @@ disable_debug_log()
 
 # To log to the console in addition to the log files (or instead of the log
 # files if they are disabled above):
-#enable_console_log()
+enable_console_log()
 # To change the console log level:
 #set_console_log_level('INFO')
 
