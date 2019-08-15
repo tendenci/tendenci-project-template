@@ -7,3 +7,6 @@
 # except for .gitignore and .gitkeep
 !.gitignore
 !.gitkeep
+
+whoosh_index/*
+!whoosh_index/README
