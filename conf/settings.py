@@ -144,6 +144,17 @@ TIME_ZONE = 'US/Central'
 #AWS_ACCESS_KEY_ID = ''
 #AWS_SECRET_ACCESS_KEY = ''
 
+# To send newsletters via an SMTP server (example: mailgun):
+#NEWSLETTER_EMAIL_HOST = 'smtp.mailgun.org'
+#NEWSLETTER_EMAIL_PORT = 587
+#NEWSLETTER_EMAIL_HOST_USER = ''
+#NEWSLETTER_EMAIL_HOST_PASSWORD = ''
+
+# To send newsletters via Amazon SES:
+#NEWSLETTER_EMAIL_BACKEND = "django_ses.SESBackend"
+#AWS_ACCESS_KEY_ID = ''
+#AWS_SECRET_ACCESS_KEY = ''
+
 # For development/testing:
 # Try https://github.com/Nilhcem/FakeSMTP and use the SMTP configuration above,
 # or try https://github.com/PaulSD/django_log_email and use the following
