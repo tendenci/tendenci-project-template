@@ -3,5 +3,3 @@
 
 pylibmc==1.6.1
 
-# gevent for async workers
-gevent==1.4.0
