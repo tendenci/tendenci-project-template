@@ -1,2 +1,2 @@
-https://github.com/tendenci/tendenci/archive/master.zip
-#tendenci>=12,<13
+#https://github.com/tendenci/tendenci/archive/master.zip
+tendenci>=12,<13
