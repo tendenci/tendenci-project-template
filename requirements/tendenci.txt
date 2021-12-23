@@ -1,2 +1,1 @@
-#https://github.com/tendenci/tendenci/archive/master.zip
-tendenci>=14,<15
+tendenci>=12,<13
