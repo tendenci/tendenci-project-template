@@ -1,5 +1,4 @@
 -r common.txt
 -r tendenci.txt
 
-pylibmc==1.6.1
 

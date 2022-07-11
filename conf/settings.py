@@ -226,6 +226,8 @@ TIME_ZONE = 'US/Central'
 # To change the cache timeout:
 # (Default is 30 days)
 #CACHES['default']['TIMEOUT'] = 60*60*24*30
+# Specify your caches backend here if you don't have memcached installed.
+#CACHES['default']['BACKEND'] = 'django.core.cache.backends.dummy.DummyCach'
 
 
 # ---------------------------------------------------------------------------- #
