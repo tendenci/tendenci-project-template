@@ -5,12 +5,12 @@
 
 from tendenci.urls import handler500  # noqa: F401
 from tendenci.urls import pre_urlpatterns, post_urlpatterns
-from django.conf.urls import url, include  # noqa: F401
+from django.urls import path, re_path, include  # noqa: F401
 
 
 urlpatterns = pre_urlpatterns + [
-    #url(r'^', include('example_app.urls')),
-    #url(r'^tickets/', include('tendenci.apps.helpdesk.urls')),
+    #re_path(r'^', include('example_app.urls')),
+    #re_path(r'^tickets/', include('tendenci.apps.helpdesk.urls')),
 ] + post_urlpatterns
 
 
