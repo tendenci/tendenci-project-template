@@ -335,14 +335,6 @@ enable_console_log()
 #if DEBUG:
 #    INTERNAL_IPS = ['127.0.0.1', '::1']
 
-# Uncomment this setting to enable the Django Debug Toolbar for profiling
-# (measuring CPU/SQL/cache/etc timing).  Only clients matching INTERNAL_IPS
-# above will be able to use the toolbar.
-# This toolbar may expose internal/private data, and it will slow down your site
-# significantly, so use this with caution.
-#DEBUG_TOOLBAR_ENABLED = True
-
-
 # ---------------------------------------------------------------------------- #
 # These lines must remain at the end of this file
 # ---------------------------------------------------------------------------- #
