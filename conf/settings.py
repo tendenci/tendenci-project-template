@@ -21,7 +21,7 @@ from tendenci.settings import *
 # To enable verbose error pages, debug logging, and other features that are
 # useful for development/testing but should not be enabled on live sites,
 # uncomment this setting.
-#DEBUG = True
+DEBUG = True
 
 if DEBUG:
     disable_template_cache()
@@ -287,8 +287,8 @@ ROOT_URLCONF = 'conf.urls'
 # messages to /var/log/mysite/app.log)
 
 # To change the log file names:
-set_app_log_filename('/var/log/mysite/app.log')
-set_debug_log_filename('/var/log/mysite/debug.log')
+set_app_log_filename('/var/log/{{ project_name }}/app.log')
+set_debug_log_filename('/var/log/{{ project_name }}/debug.log')
 
 # To change the log level for the app.log file:
 # (Valid levels are: 'DEBUG' 'INFO' 'WARNING' 'ERROR' 'CRITICAL')
