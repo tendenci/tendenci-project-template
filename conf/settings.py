@@ -21,7 +21,7 @@ from tendenci.settings import *
 # To enable verbose error pages, debug logging, and other features that are
 # useful for development/testing but should not be enabled on live sites,
 # uncomment this setting.
-DEBUG = True
+#DEBUG = True
 
 if DEBUG:
     disable_template_cache()
