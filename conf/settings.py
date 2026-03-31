@@ -73,7 +73,9 @@ if DEBUG:
 # sudo -u postgres psql -c "ALTER ROLE $DB_USER SET timezone TO 'US/Eastern';"
 # A list of time zone names can be found at
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
-TIME_ZONE = 'US/Central'
+# TIME_ZONE = 'US/Central'
+# Django 5.2: Got ValueError: Incorrect timezone setting: US/Central
+TIME_ZONE = 'America/Chicago'
 
 
 # ---------------------------------------------------------------------------- #
