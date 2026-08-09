@@ -4,3 +4,4 @@
 # https://tendenci.readthedocs.org
 
 # Your common dependencies here.
+django-environ

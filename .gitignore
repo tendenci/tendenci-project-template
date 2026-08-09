@@ -4,9 +4,10 @@
 # Ignore all pyc file
 *.pyc
 
-# except for .gitignore and .gitkeep
+# except for .gitignore, .gitkeep, and .env.example
 !.gitignore
 !.gitkeep
+!.env.example
 
 whoosh_index/*
 !whoosh_index/README
