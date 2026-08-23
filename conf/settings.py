@@ -77,6 +77,15 @@ if DEBUG:
 # Django 5.2: Got ValueError: Incorrect timezone setting: US/Central
 TIME_ZONE = 'America/Chicago'
 
+# ---------------------------------------------------------------------------- #
+# Other Localisation Settings
+# ---------------------------------------------------------------------------- #
+# If you need to have more control over the formatting of dates, times etc,
+# see https://docs.djangoproject.com/en/4.2/topics/i18n/formatting/#creating-custom-format-files
+# and uncomment the following setting, changing "mysite" to the name of your project
+# Note Django defaults to US formatting of dates, times etc so you probably only
+# need to change this if your site is not US based.
+# FORMAT_MODULE_PATH = 'mysite.formats'
 
 # ---------------------------------------------------------------------------- #
 # HTTPS and Session Settings
